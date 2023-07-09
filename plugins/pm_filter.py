@@ -47,7 +47,12 @@ async def pm_next_page(bot, query):
     if not files:
         return
     
-    if SHORT_URL and SHORT_API:          
+    if SHORT_URL and SHORT_API:
+        InlineKeyboardMarkup([
+                [InlineKeyboardButton(f"Files{(int(total_results)}", callback_data="pages")),
+                    InlineKeyboardButton("Tips", query.answer("Buddy Don't Touch Others Property 😁", show_alert=True))],
+                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
+            ])
         if SINGLE_BUTTON:
             btn = [[InlineKeyboardButton(text=f"⚡{get_size(file.file_size)}⚡ {file.file_name}", url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}"))] for file in files ]
         else:
@@ -139,7 +144,13 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         search, files, offset, total_results = pmspoll
     pre = 'pmfilep' if PROTECT_CONTENT else 'pmfile'
 
-    if SHORT_URL and SHORT_API:          
+    if SHORT_URL and SHORT_API:     
+        InlineKeyboardMarkup([
+                InlineKeyboardMarkup([
+                [InlineKeyboardButton(f"Files{(int(total_results)}",callback_data="pages")),
+                    InlineKeyboardButton("Tips", query.answer("Buddy Don't Touch Others Property 😁", show_alert=True))],
+                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
+            ])
         if SINGLE_BUTTON:
             btn = [[InlineKeyboardButton(text=f"⚡{get_size(file.file_size)}⚡ {file.file_name}", url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=pre_{file.file_id}"))] for file in files ]
         else:
