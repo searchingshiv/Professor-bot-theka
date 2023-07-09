@@ -49,7 +49,7 @@ async def pm_next_page(bot, query):
     
     if SHORT_URL and SHORT_API:
         InlineKeyboardMarkup([
-                [InlineKeyboardButton(f"Files{(int(total_results))}", callback_data="pages")],
+                #[InlineKeyboardButton(f"Files{(int(total_results))}", callback_data="pages")],
                     [InlineKeyboardButton("Tips", query.answer("Buddy Don't Touch Others Property 😁", show_alert=True))],
                 [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
             ])
@@ -146,7 +146,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
 
     if SHORT_URL and SHORT_API:     
         InlineKeyboardMarkup([
-                [InlineKeyboardButton(f"Files{(int(total_results))}", callback_data="pages")],
+                #[InlineKeyboardButton(f"Files{(int(total_results))}", callback_data="pages")],
                     [InlineKeyboardButton("Tips", query.answer("Buddy Don't Touch Others Property 😁", show_alert=True))],
                 [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
             ])
